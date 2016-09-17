@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.imageBox1 = new Emgu.CV.UI.ImageBox();
+            this.tracking = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,12 +41,27 @@
             this.imageBox1.Size = new System.Drawing.Size(653, 442);
             this.imageBox1.TabIndex = 2;
             this.imageBox1.TabStop = false;
+            this.imageBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.imageBox1_Paint);
+            this.imageBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.imageBox1_MouseDown);
+            this.imageBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.imageBox1_MouseMove);
+            this.imageBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.imageBox1_MouseUp);
+            // 
+            // tracking
+            // 
+            this.tracking.Location = new System.Drawing.Point(13, 462);
+            this.tracking.Name = "tracking";
+            this.tracking.Size = new System.Drawing.Size(653, 38);
+            this.tracking.TabIndex = 3;
+            this.tracking.Text = "Tracking";
+            this.tracking.UseVisualStyleBackColor = true;
+            this.tracking.Click += new System.EventHandler(this.tracking_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(678, 482);
+            this.ClientSize = new System.Drawing.Size(678, 499);
+            this.Controls.Add(this.tracking);
             this.Controls.Add(this.imageBox1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -58,6 +74,7 @@
         #endregion
 
         private Emgu.CV.UI.ImageBox imageBox1;
+        private System.Windows.Forms.Button tracking;
     }
 }
 
